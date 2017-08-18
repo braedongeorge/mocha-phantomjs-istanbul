@@ -18,8 +18,8 @@ function collectCoverage(page) {
 
   // read coverageFile from mocha-phantomjs args
   var phantomOpts = JSON.parse(system.args[system.args.length-1]);
-  var coverageFile = phantomOpts.coverageFile || 'coverage/coverage.json';
  
+  var coverageFile = phantomOpts.settings.coverageFile || 'coverage/coverage.json';
   // write coverage to file
   var json = JSON.stringify(coverage);
   fs.write(coverageFile, json);
